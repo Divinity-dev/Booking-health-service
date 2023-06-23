@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import * as GiIcons from 'react-icons/gi';
-import * as IoIcons from 'react-icons/io';
+import { FaStethoscope } from 'react-icons/fa';
+// import * as IoIcons from 'react-icons/io';
 import * as FaIcons from 'react-icons/fa';
 import * as MdIcons from 'react-icons/md';
 import * as RiIcons from 'react-icons/ri';
@@ -9,8 +10,8 @@ import * as RiIcons from 'react-icons/ri';
 export const navLinks = [
   {
     id: 1,
-    title: 'CARS',
-    icon: <IoIcons.IoIosCar />,
+    title: 'SERVICES',
+    icon: <FaStethoscope />,
     path: '/',
     cName: 'sidebar-link',
   },
@@ -30,14 +31,14 @@ export const navLinks = [
   },
   {
     id: 4,
-    title: 'ADD CAR',
+    title: 'ADD SERVICE',
     icon: <GiIcons.GiCartwheel />,
     path: '/add-car',
     cName: 'sidebar-link',
   },
   {
     id: 5,
-    title: 'DELETE CAR',
+    title: 'DELETE SERVIE',
     icon: <RiIcons.RiDeleteBack2Line />,
     path: '/delete-car',
     cName: 'sidebar-link',
