@@ -1,6 +1,7 @@
 /* eslint-disable import/extensions */
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { authReducer } from './auth/auth';
+import { servicesReducer } from './services/services';
 
 const token = localStorage.getItem('token');
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  services: servicesReducer,
 });
 
 export default configureStore({
