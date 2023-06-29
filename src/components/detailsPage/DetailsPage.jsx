@@ -93,7 +93,7 @@ const DetailsPage = () => {
               X
             </button>
             <br />
-            <Modal selectedCar={service} setIsModalOpen={setIsModalOpen} />
+            <Modal selectedService={service} setIsModalOpen={setIsModalOpen} />
           </div>
         </div>
       )}

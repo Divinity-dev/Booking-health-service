@@ -7,6 +7,7 @@ import AddService from '../components/addService/AddService';
 import UserReservationTable from '../components/userReservationTable/UserReservationTable';
 import RemoveService from '../components/deleteService/deleteService';
 import DetailsPage from '../components/detailsPage/DetailsPage';
+import ReservationForm from '../components/reservationForm/ReservationForm';
 
 const AuthenticatedRoute = () => (
   <>
@@ -19,6 +20,7 @@ const AuthenticatedRoute = () => (
       <Route path="/delete-service" element={<RemoveService />} />
       <Route path="/details/:id" element={<DetailsPage />} />
       <Route path="/myreservations" element={<UserReservationTable />} />
+      <Route path="/reserve" element={<ReservationForm />} />
     </Routes>
   </>
 );
