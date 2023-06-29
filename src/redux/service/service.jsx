@@ -1,22 +1,47 @@
-import { GET_SERVICES } from '../types';
-import getCarsFromDB from '../../APIs/services';
+/* eslint-disable import/no-extraneous-dependencies */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { URL } from '../../constants';
 
-const initialState = [];
+const BASE_URL = `${URL}/api/v1/heatlth_services`;
 
-export const getCars = () => async (dispatch) => {
-  const services = await getCarsFromDB();
-  dispatch({
-    type: GET_SERVICES,
-    payload: services,
-  });
+const initialState = {
+  status: null,
 };
 
-export const servicesReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case GET_SERVICES:
-      return action.payload;
+export const createService = createAsyncThunk(
+  'create/createService',
+  async (payload, thunkAPI) => {
+    try {
+      const response = await axios.post(BASE_URL, payload, {
+        service: payload,
+      });
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
 
-    default:
-      return state;
-  }
-};
+const createServiceSlice = createSlice({
+  name: 'newService',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(createService.pending, (state) => {
+        const IsPending = state;
+        IsPending.status = 'pending';
+      })
+      .addCase(createService.fulfilled, (state) => {
+        const IsFulfilled = state;
+        IsFulfilled.status = 'fulfilled';
+      })
+      .addCase(createService.rejected, (state) => {
+        const IsRejected = state;
+        IsRejected.status = 'rejected';
+      });
+  },
+});
+
+export default createServiceSlice.reducer;

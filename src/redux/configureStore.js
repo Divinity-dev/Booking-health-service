@@ -2,6 +2,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { authReducer } from './auth/auth';
 import { servicesReducer } from './services/services';
+import deleteServiceReducer from './deleteService/deleteService';
 
 const token = localStorage.getItem('token');
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
 const rootReducer = combineReducers({
   auth: authReducer,
   services: servicesReducer,
+  deleteServiceReducer,
 });
 
 export default configureStore({

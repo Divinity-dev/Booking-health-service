@@ -33,14 +33,14 @@ export const navLinks = [
     id: 4,
     title: 'ADD SERVICE',
     icon: <GiIcons.GiCartwheel />,
-    path: '/add-car',
+    path: '/add-service',
     cName: 'sidebar-link',
   },
   {
     id: 5,
     title: 'DELETE SERVIE',
     icon: <RiIcons.RiDeleteBack2Line />,
-    path: '/delete-car',
+    path: '/delete-service',
     cName: 'sidebar-link',
   },
   {
