@@ -3,7 +3,7 @@ import axios from 'axios';
 import getServicesFromDB from '../../APIs/services';
 import { URL } from '../../constants';
 
-const Url = `${URL}/api/v1/health_services`;
+const Url = `${URL}/api/v1/heatlth_services`;
 
 export const deleteService = createAsyncThunk(
   'delete/deleteService',
